@@ -88,8 +88,8 @@
         .second-buttons button.active,
         .menu-sections button.active,
         .irradiations button.active {
-            background-color: #444;
-            color: #fff;
+            background-color: #FFE6CE;
+            color: #000000;
         }
         
         .symptoms {
@@ -269,7 +269,7 @@
         }
 
         .highlight-background {
-            background-color: #f9f9d6;
+            background-color: #FFE6CE;
             padding: 10px;
             border-radius: 10px;
             margin-bottom: 15px;
@@ -287,6 +287,17 @@
         }
 
         .highlight-backgroundman {
+            background-color: #d4f6de;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            margin-top: 10px;
+            /* 上に余白を追加 */
+            text-align: center;
+            /* コンテナ内の要素を中央に配置 */
+        }
+
+        .highlight-backgroundmanaaa {
             background-color: #d4f6de;
             padding: 10px;
             border-radius: 10px;
@@ -442,6 +453,7 @@
     margin-bottom: 20px;
     line-height: 1.2;
 }
+
     </style>
 </head>
 
@@ -461,6 +473,7 @@
             <button type="button" onclick="showMenu('female')">【脱毛メニュー】</button>
             <button type="button" onclick="showMenu('matuiku')">【まつ育メニュー】</button>
             <button type="button" onclick="showMenu('eyebrow')">【ホワイトニング】</button>
+            <button type="button" onclick="showMenu('eyebrowmale')">【ホワイトニング】</button>
             <button type="button" onclick="showMenu('malenew')">【男性新規トライアルメニュー】</button>
             <button type="button" onclick="showMenu('femalenew')">【女性新規トライアルメニュー】</button>
         </div>
@@ -481,8 +494,8 @@
         </div>
 
         <div id="malenew" class="menu-section">
-            <div class="highlight-background">
-                <span class="highlight-text">⭐男性新規トライアルメニュー⭐</span>
+            <div class="highlight-backgroundman">
+                <span class="highlight-text">◆新規トライアルメニュー◆</span>
             </div>
             <div class="symptoms">
                 <button type="button" onclick="selectSymptom(this, 'treatment16')" data-price="1500">髭脱毛</button>
@@ -533,7 +546,7 @@
 
         <div id="femalenew" class="menu-section">
             <div class="highlight-background">
-                <span class="highlight-text">⭐女性新規トライアルメニュー⭐</span>
+                <span class="highlight-text">◆新規トライアルメニュー◆</span>
             </div>
             <div class="symptoms">
                 <button type="button" onclick="selectSymptom(this, 'treatment16')" data-price="1500">VIOダブル脱毛</button>
@@ -560,6 +573,15 @@
 
         <div id="eyebrow" class="menu-section">
             <div class="highlight-background">
+                <span class="highlight-text">◆ホワイトニング◆</span>
+            </div>
+            <div class="symptoms">
+                <button type="button" onclick="selectSymptom(this)" data-price="500">セルフホワイトニング</button>
+            </div>
+        </div>
+
+        <div id="eyebrowmale" class="menu-section">
+            <div class="highlight-backgroundman">
                 <span class="highlight-text">◆ホワイトニング◆</span>
             </div>
             <div class="symptoms">
@@ -622,7 +644,7 @@
 
         document.addEventListener('DOMContentLoaded', function () {
             liff.init({
-                liffId: ''
+                liffId: '2006754667-4pj2eQOW'
             }).then(() => {
                 console.log('LIFF初期化成功');
             }).catch((err) => {
@@ -703,6 +725,7 @@
             '【脱毛メニュー】',
             '【脱毛メニュー】',
             '【まつ育メニュー】',
+            '【ホワイトニング】',
             '【ホワイトニング】',
             '【男性新規トライアルメニュー】',
             '【女性新規トライアルメニュー】'
@@ -1294,9 +1317,7 @@ if (treatmentId === 'treatment1') {
             if (visitCount === '男性') {
                 document.querySelector('button[onclick="showMenu(\'male\')"]').style.display = 'inline-block';
                 document.querySelector('button[onclick="showMenu(\'malenew\')"]').style.display = 'inline-block';
-                document.querySelector('button[onclick="showMenu(\'eyebrow\')"]').style.display = 'inline-block';
-                document.querySelector('button[onclick="showMenu(\'whiteningmale\')"]').style.display = 'inline-block';
-                document.querySelector('button[onclick="showMenu(\'limited\')"]').style.display = 'inline-block';
+                document.querySelector('button[onclick="showMenu(\'eyebrowmale\')"]').style.display = 'inline-block';
             } else if (visitCount === '女性') {
                 document.querySelector('button[onclick="showMenu(\'matuiku\')"]').style.display = 'inline-block';
                 document.querySelector('button[onclick="showMenu(\'female\')"]').style.display = 'inline-block';
